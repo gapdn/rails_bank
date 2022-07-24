@@ -1,0 +1,12 @@
+en:
+  dry_validation:
+    errors:
+      user:
+        rules:
+          password:
+            too_short: 'Password must be at least 8 characters'
+  response:
+    success:
+      created: '%{object} was successfully created.'
+    fail:
+      invalid: 'There are validation errors: %{errors}'
