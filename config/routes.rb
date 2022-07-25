@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for(:users, only: %i[sessions registrations])
+  devise_for :users
+  resources :users, except: %i[destroy index]
 
-  root to: 'accounts#index'
-
-  resources :accounts, except: %i[destroy edit update]
+  # Defines the root path route ("/")
+  # root "articles#index"
 end
