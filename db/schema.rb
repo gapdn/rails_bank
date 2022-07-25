@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_014059) do
 
   create_table "accounts", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "number"
+    t.string "number", null: false
     t.integer "credit_cents", default: 0, null: false
     t.string "credit_currency", default: "USD", null: false
     t.datetime "created_at", null: false
@@ -27,8 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_014059) do
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "full_name", null: false
-    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

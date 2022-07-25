@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>
+  <%= t('.h1') %>
+</h1>
+
+<div id="accounts">
+  <% @accounts.each do |account| %>
+    <div>
+      <%= link_to "#{account.number}", account %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to t(:create_account), new_account_path %>

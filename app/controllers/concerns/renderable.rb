@@ -8,8 +8,7 @@ module Renderable
 
     def app_render(object, redirect_url:, return_action:)
       case object
-      when Dry::Validation::Result
-        render_error(object, return_action)
+      when Dry::Validation::Result then render_error(object, return_action)
       else
         render_success(object, redirect_url)
       end
@@ -18,9 +17,8 @@ module Renderable
     def render_success(object, redirect_url)
       respond_to do |format|
         format.html do
-          redirect_to redirect_url, notice: I18n('response.success.created', object: object.class.capitalize)
+          redirect_to redirect_url, notice: I18n.t('response.success.created', entity: object.class.name.capitalize)
         end
-
         format.json { render :show, status: :created, location: object }
       end
     end
@@ -28,10 +26,10 @@ module Renderable
     def render_error(object, return_action)
       respond_to do |format|
         format.html do
-          render return_action, status: :unprocessable_entity, alert: I18n('response.fail.invalid', errors: object.resource.errors.to_h)
+          flash.alert = I18n.t('response.fail.invalid', errors: object.errors.messages.map(&:text))
+          render(action: return_action, status: :unprocessable_entity)
         end
-
-        format.json { render json: object.resource.errors.to_h, status: :unprocessable_entity }
+        format.json { render json: object.errors.messages.map(&:text), status: :unprocessable_entity }
       end
     end
   end

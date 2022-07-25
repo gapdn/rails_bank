@@ -1,12 +1,27 @@
 en:
   dry_validation:
     errors:
-      user:
+      account:
         rules:
-          password:
-            too_short: 'Password must be at least 8 characters'
+          credit_currency:
+            invalid: Invalid currency
+          email: Email is not a valid email address
   response:
     success:
-      created: '%{object} was successfully created.'
+      created: "%{entity} was successfully created."
     fail:
-      invalid: 'There are validation errors: %{errors}'
+      invalid: "There are validation errors: %{errors}"
+  accounts:
+    index:
+      h1: Account
+      show_account: Show Account details
+      create_account: Create New Account
+    edit:
+      h1: Edit Account
+      show_accounts: Back to Accounts
+    new:
+      h1: New Account
+      show_accounts: Back to Accounts
+    show:
+      edit_account: Edit this Account
+      show_accounts: Back to Accounts

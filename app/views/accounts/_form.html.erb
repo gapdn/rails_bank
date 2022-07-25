@@ -1,0 +1,10 @@
+<%= form_with(model: @account) do |f| %>
+  <div>
+    <%= f.label :credit_currency %>
+    <%= f.select :credit_currency, Money::Currency.table.keys.map(&:upcase) %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
