@@ -8,14 +8,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 user = User.new(
-  first_name: FFaker::NameUA.first_name,
-  last_name: FFaker::NameUA.last_name,
+  first_name: 'John',
+  last_name: 'Doe',
   email: 'test_email@gmail.com',
   password: '12345678'
 )
 
 user.accounts.build(
-  number: FFaker::Number.number(digits: 16)
+  number: FFaker::Number.number(digits: 16),
+  credit: 1000
 )
 
 user.save

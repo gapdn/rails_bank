@@ -1,0 +1,72 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.1
+  Exclude:
+    - bin/*
+    - config/environments/*
+    - config/initializers/*
+    - config/puma.rb
+    - db/migrate/*
+    - db/schema.rb
+  NewCops: enable
+
+# Layout
+Layout/LineLength:
+  Max: 120
+
+Layout/ArrayAlignment:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+# Metrics
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/ClassLength:
+  Max: 120
+
+# Rspec
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/ImplicitBlockExpectation:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# Style
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/OpenStructUse:
+  Exclude:
+    - spec/services/crud_service_spec.rb
+
+# Others
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Lint/MissingSuper:
+  Enabled: false
