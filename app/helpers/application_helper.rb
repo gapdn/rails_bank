@@ -8,10 +8,6 @@ module ApplicationHelper
     alert: 'alert alert-danger'
   }.freeze
 
-  def active_class(link_path)
-    current_page?(link_path) ? 'active' : ''
-  end
-
   def flash_class(level)
     FLASH_CLASSES[level.to_sym]
   end

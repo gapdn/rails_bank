@@ -10,13 +10,13 @@
 user = User.new(
   first_name: 'John',
   last_name: 'Doe',
-  full_name: 'John Doe',
   email: 'test_email@gmail.com',
   password: '12345678'
 )
 
 user.accounts.build(
-  number: FFaker::Number.number(digits: 16)
+  number: FFaker::Number.number(digits: 16),
+  credit: 1000
 )
 
 user.save

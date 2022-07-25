@@ -50,6 +50,9 @@ RSpec/NestedGroups:
 RSpec/ImplicitBlockExpectation:
   Enabled: false
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
 # Style
 Style/Documentation:
   Enabled: false
