@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   root to: 'accounts#index'
 
-  resources :accounts, except: %i[destroy edit update]
+  resources :accounts, except: %i[destroy update]
+  resources :account_transactions, only: %i[index show new create]
 end

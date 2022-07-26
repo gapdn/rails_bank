@@ -6,6 +6,14 @@ en:
           credit_currency:
             invalid: Invalid currency
           email: Email is not a valid email address
+      account_transaction:
+        rules:
+          sender_account:
+            invalid: You cannot send more than you have. That is life...
+          receiver_account:
+            invalid: You cannot send to yourself
+          amount:
+            invalid: Amount must be grater than 0
   response:
     success:
       created: "%{entity} was successfully created."
@@ -25,3 +33,4 @@ en:
     show:
       edit_account: Edit this Account
       show_accounts: Back to Accounts
+      show_transaction: History
