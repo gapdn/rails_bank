@@ -1,0 +1,11 @@
+<div id="<%= dom_id account_transaction %>">
+  <div>
+    <%= "Sender: #{account_transaction.sender_account.email}" %>
+  </div>
+  <div>
+    <%= "Amount: #{account_transaction.amount}" %>
+  </div>
+  <div>
+    <%= "Balance after transaction: #{account_transaction.receiver_account_balance}" %>
+  </div>
+</div>
