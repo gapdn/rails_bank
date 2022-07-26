@@ -5,7 +5,7 @@ FactoryBot.define do
     association :user
 
     number { FFaker::Number.number(digits: 16).to_s }
-    credit { 0 }
+    credit { 100 }
     credit_currency { :usd }
   end
 end
