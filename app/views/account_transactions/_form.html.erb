@@ -1,0 +1,16 @@
+<%= form_with(model: account_transaction) do |f| %>
+  <div>
+    <%= f.label :receiver_account %>
+    <%= f.select :receiver_account_id, presenter.accounts %>
+  </div>
+  <div>
+    <%= f.label :amount %>
+    <%= f.number_field :amount%>
+    <%= f.hidden_field :sender_account_id, value: @account_id %>
+  </div>
+
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

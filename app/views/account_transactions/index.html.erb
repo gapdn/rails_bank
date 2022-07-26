@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Account transactions</h1>
+
+<div id="outgoing_transactions">
+  <% @outgoing_transactions.each do |account_transaction| %>
+    <%= render account_transaction %>
+  <% end %>
+</div>
+<br>
+<div id="incoming_transactions">
+  <% @incoming_transactions.each do |account_transaction| %>
+    <%= render account_transaction %>
+  <% end %>
+</div>
+
+<%= link_to "New account transaction", new_account_transaction_path(account_id: @account_id) %>
